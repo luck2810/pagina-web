@@ -1,3 +1,121 @@
+/* 1. RESET GLOBAL & CONFIGURAÇÕES BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333333;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. LAYOUT PRINCIPAL (MAIN) */
+main {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaçamento entre os artigos */
+}
+
+/* 3. CARD DO ARTIGO */
 article {
-display: flex;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex; /* Alinha imagem e texto lado a lado */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* 4. IMAGEM DO ARTIGO */
+article img {
+    width: 40%;
+    max-width: 250px;
+    object-fit: cover; /* Garante que a imagem não distorça */
+    background-color: #e4e6eb; /* Fundo cinza caso a imagem falhe */
+}
+
+/* 5. CONTEÚDO DO TEXTO */
+article div {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+article h2 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.artigo-autor {
+    font-size: 0.85rem;
+    color: #65676b;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+article p:not(.artigo-autor) {
+    font-size: 1rem;
+    color: #4f4f4f;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* 6. BOTÕES DE REAÇÃO */
+article button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f0f2f5;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+article button:hover {
+    background-color: #e4e6eb;
+}
+
+article button:active {
+    transform: scale(0.95);
+}
+
+article button span {
+    font-weight: bold;
+    color: #050505;
+}
+
+/* 7. RESPONSIVIDADE (PARA CELULARES) */
+@media (max-width: 600px) {
+    article {
+        flex-direction: column; /* Empilha a imagem acima do texto */
+    }
+    
+    article img {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+
+    article div {
+        padding: 20px;
+    }
 }
