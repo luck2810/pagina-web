@@ -1,9 +1,8 @@
-/* 1. RESET GLOBAL & CONFIGURAÇÕES BASE */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -14,22 +13,20 @@ body {
     justify-content: center;
 }
 
-/* 2. LAYOUT PRINCIPAL (MAIN) */
 main {
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Espaçamento entre os artigos */
+    gap: 30px;
 }
 
-/* 3. CARD DO ARTIGO */
 article {
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    display: flex; /* Alinha imagem e texto lado a lado */
+    display: flex;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -38,15 +35,13 @@ article:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* 4. IMAGEM DO ARTIGO */
 article img {
     width: 40%;
     max-width: 250px;
-    object-fit: cover; /* Garante que a imagem não distorça */
-    background-color: #e4e6eb; /* Fundo cinza caso a imagem falhe */
+    object-fit: cover;
+    background-color: #e4e6eb;
 }
 
-/* 5. CONTEÚDO DO TEXTO */
 article div {
     padding: 24px;
     display: flex;
@@ -75,7 +70,6 @@ article p:not(.artigo-autor) {
     margin-bottom: 20px;
 }
 
-/* 6. BOTÕES DE REAÇÃO */
 article button {
     display: inline-flex;
     align-items: center;
@@ -103,18 +97,15 @@ article button span {
     color: #050505;
 }
 
-/* 7. RESPONSIVIDADE (PARA CELULARES) */
 @media (max-width: 600px) {
     article {
-        flex-direction: column; /* Empilha a imagem acima do texto */
+        flex-direction: column;
     }
-    
     article img {
         width: 100%;
         max-width: 100%;
         height: 200px;
     }
-
     article div {
         padding: 20px;
     }

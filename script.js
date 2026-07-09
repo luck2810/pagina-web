@@ -1,27 +1,28 @@
-// 1. Seleciona todos os botões de reação da página
+// Seleciona todos os botões de reação da página
 const botoes = document.querySelectorAll('article button');
 
-// 2. Adiciona o evento de clique para cada botão individualmente
+// Aplica a lógica individualmente para cada botão
 botoes.forEach(botao => {
-    // Cria o estado "curtiu" isolado dentro do escopo de cada botão
+    // Cada botão controla se foi clicado ou não de forma independente
     let curtiu = false;
 
     botao.addEventListener('click', () => {
         console.log("fui clicado");
         
-        // Seleciona o contador (span) apenas DESTE botão específico
+        // Seleciona o <span> com o número dentro deste botão específico
         const texto = botao.querySelector("span");
-        
-        // Converte o texto atual para número para evitar erros de soma
-        let quantidade = parseInt(texto.textContent);
+        let quantidade = parseInt(texto.textContent, 10);
 
+        // Se não tinha curtido: soma 1 e muda o fundo para azul
         if (!curtiu) {
             texto.textContent = quantidade + 1;
-            botao.style.backgroundColor = "#e1f5fe"; // Feedback visual opcional (fundo azul claro)
+            botao.style.backgroundColor = "#e1f5fe"; 
             curtiu = true;
-        } else {
-            texto.textContent = quantity - 1;
-            botao.style.backgroundColor = ""; // Volta a cor original do CSS
+        } 
+        // Se já tinha curtido: subtrai 1 e remove o fundo azul
+        else {
+            texto.textContent = quantidade - 1;
+            botao.style.backgroundColor = ""; 
             curtiu = false;
         }
     });
